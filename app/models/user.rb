@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
 
+  has_many :exam_attempts
+
   field :username, type: String
   field :first_name, type: String
   field :last_name, type: String
