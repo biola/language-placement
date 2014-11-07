@@ -2,8 +2,7 @@ class ExamAttempt
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :user
-  belongs_to :exam_type
+  belongs_to :exam
 
   field :uid, type: String
   field :started_at, type: DateTime
