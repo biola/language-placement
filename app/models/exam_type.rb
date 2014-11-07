@@ -1,5 +1,5 @@
 class ExamType
-  include Mongoid:Document
+  include Mongoid::Document
 
   has_many :exams
 
