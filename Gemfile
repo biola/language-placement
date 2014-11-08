@@ -21,3 +21,7 @@ gem 'jquery-rails'
 gem 'spring',        group: :development
 
 gem 'slim'
+
+gem 'rack-cas'
+
+gem 'rails_config'
