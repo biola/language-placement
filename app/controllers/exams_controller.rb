@@ -2,7 +2,7 @@ class ExamsController < ApplicationController
   def create
     exam = Exam.new(exam_params)
 
-    #TODO exam.user = current_user
+    exam.user = current_user
 
     attempt = exam.exam_attempts.build
 
