@@ -15,6 +15,9 @@ class ExamUrlGenerator
   end
 
   def results_url
+    results_url = base_url.merge('/nwcresult.php')
+    results_url.query = base_query_string.merge(pin: Settings.webcape.pin, fmt: "csv", since: "x").to_query
+    results_url.to_s
   end
 
   private
