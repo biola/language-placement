@@ -15,4 +15,10 @@ class User
   def name
     "#{first_name} #{last_name}"
   end
+
+  validates :username, presence: true, uniqueness: true
+  validates :first_name, :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :biola_id, presence: true, uniqueness: true
+  
 end

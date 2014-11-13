@@ -6,4 +6,6 @@ class ExamType
   field :name, type: String
   field :code, type: String
 
+  validates :name, :code, presence: true, uniqueness: true
+
 end
