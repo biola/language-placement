@@ -5,4 +5,6 @@ class Exam
   belongs_to :user
 
   embeds_many :exam_attempts
+
+  delegate :code, to: :exam_type, prefix: true
 end

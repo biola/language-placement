@@ -5,4 +5,5 @@ class ExamType
 
   field :name, type: String
   field :code, type: String
+
 end

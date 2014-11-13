@@ -1,2 +1,8 @@
 cas:
   url: "https://login.biola.edu/cas"
+
+webcape:
+  acct:  # set in settings.local.yml
+  pass:  # set in settings.local.yml
+  pin:    
+  

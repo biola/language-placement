@@ -4,10 +4,11 @@ class ExamsController < ApplicationController
 
     #TODO exam.user = current_user
 
-    exam.exam_attempts.build
+    attempt = exam.exam_attempts.build
 
     if exam.save
       #TODO redirect to testing site
+      redirect_to ExamUrlGenerator.new(attempt.uid, exam.exam_type_code).exam_url('http://www.google.com')
     else
       redirect_to exams_path, alert: exam.errors.full_messages.join(' ')
     end
