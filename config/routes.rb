@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :exam_types, only: [:index]
-  resources :exams, only: [:create]
+  resources :exams, only: [:create, :show] do
+    resources :exam_attempts, only: [:create, :show] do
+      get :complete, on: :member
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

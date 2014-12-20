@@ -4,13 +4,20 @@ class ExamsController < ApplicationController
 
     exam.user = current_user
 
-    attempt = exam.exam_attempts.build
+    # attempt = exam.exam_attempts.build
 
     if exam.save
-      redirect_to ExamUrlGenerator.new(attempt.uid, exam.exam_type_code).exam_url('http://www.google.com')
+      # redirect_to ExamUrlGenerator.new(attempt.uid, exam.exam_type_code).exam_url('http://www.google.com')
+      redirect_to exam_path(exam)
     else
-      redirect_to exams_path, alert: exam.errors.full_messages.join(' ')
+      redirect_to exam_types_path, alert: exam.errors.full_messages.join(' ')
     end
+  end
+
+  def show
+    @exam = Exam.find(params[:id])
+    @unfinished_exams = @exam.exam_attempts.unfinished
+    @finished_exams = @exam.exam_attempts.finished
   end
 
   private

@@ -1,5 +1,5 @@
 class ExamTypesController < ApplicationController
   def index
-    @exam_types = ExamType.all.asc(:name)
+    @exams = ExamType.all.asc(:name).map { |et| et.exams.where(user: current_user).first_or_initialize }
   end
 end
