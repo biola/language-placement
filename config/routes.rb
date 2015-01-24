@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :users, only: [:index, :show]
-  resources :exam_types, only: [:index]
+  resources :types, only: [:index]
   resources :exams, only: [:create, :show] do
-    resources :exam_attempts, only: [:create, :show] do
+    resources :attempts, only: [:create, :show] do
       get :complete, on: :member
     end
   end
@@ -63,5 +63,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root to: "exam_types#index"
+  root to: "types#index"
 end

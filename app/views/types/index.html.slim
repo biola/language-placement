@@ -1,0 +1,12 @@
+h1 Start a new exam.
+ul
+  - @exams.each do |exam|
+    li
+      - if exam.persisted?
+        = link_to exam.type.name, exam
+      - else
+        = form_for exam do |f|
+          = f.hidden_field :type_id
+          = f.submit exam.type.name
+
+

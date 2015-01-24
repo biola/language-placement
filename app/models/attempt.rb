@@ -3,7 +3,7 @@ require 'net/http'
 require 'uri'
 require 'csv'
 
-class ExamAttempt
+class Attempt
   include Mongoid::Document
   include Mongoid::Timestamps
 
@@ -36,7 +36,7 @@ class ExamAttempt
   end
 
   def import_score!
-    url = ExamUrlGenerator.new(uid, exam.exam_type_code).results_url
+    url = ExamUrlGenerator.new(uid, exam.type_code).results_url
     uri = URI.parse(url)
     response = Net::HTTP.get_response(uri)
     csv = CSV.new(response.body, headers: true)
@@ -51,5 +51,5 @@ class ExamAttempt
 
   scope :unfinished, -> { where :completed_at => nil }
   scope :finished, -> { where :completed_at.ne => nil }
-  
+
 end

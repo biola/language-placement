@@ -1,15 +1,15 @@
--if @unfinished_exams.any? 
+-if @unfinished_exams.any?
   h1 Unfinished Exams
   ul
     - @unfinished_exams.each do |exam_attempt|
       li = link_to exam_attempt, [exam_attempt.exam, exam_attempt]
 
--if @finished_exams.any? 
+-if @finished_exams.any?
   h1 Finished Exams
   ul
     - @finished_exams.each do |exam_attempt|
       li = link_to exam_attempt, [exam_attempt.exam, exam_attempt]
 
-= form_for [@exam, @exam.exam_attempts.new] do |f|
+= form_for [@exam, @exam.attempts.new] do |f|
   = f.submit "Attempt a new exam"
 

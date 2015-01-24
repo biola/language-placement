@@ -3,18 +3,18 @@ h1 = @user.name
 h1 Exams
 ul
   - @exams.each do |exam|
-    li 
-      h3 = exam.exam_type.name
+    li
+      h3 = exam.type.name
       ul
-        li 
+        li
           p Unfinished
           ul
-            - exam.exam_attempts.each do |exam_attempt|
+            - exam.attempts.each do |exam_attempt|
               - if exam_attempt.unfinished?
                 li = link_to exam_attempt, [exam_attempt.exam, exam_attempt]
         li
           p Finished
           ul
-            - exam.exam_attempts.each do |exam_attempt|
+            - exam.attempts.each do |exam_attempt|
               - if !exam_attempt.unfinished?
                 li = link_to exam_attempt, [exam_attempt.exam, exam_attempt]

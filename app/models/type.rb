@@ -1,4 +1,4 @@
-class ExamType
+class Type
   include Mongoid::Document
 
   has_many :exams
