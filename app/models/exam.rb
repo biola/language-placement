@@ -7,6 +7,7 @@ class Exam
   embeds_many :attempts
 
   delegate :code, to: :type, prefix: true
+  delegate :username, to: :user, prefix: false
 
   validates :type, :user, presence: true
   validates :user, uniqueness: { scope: :type }

@@ -24,6 +24,8 @@ gem 'slim'
 
 gem 'rack-cas'
 
+gem 'pundit'
+
 gem 'rails_config'
 
 group :development do
