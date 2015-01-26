@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < Admin::ApplicationController
   before_action :pundit_authorize
 
   def index
