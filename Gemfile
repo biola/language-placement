@@ -26,6 +26,8 @@ gem 'rack-cas'
 
 gem 'pundit'
 
+gem 'biola_frontend_toolkit'
+
 gem 'rails_config'
 
 group :development do

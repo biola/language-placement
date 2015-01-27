@@ -10,3 +10,6 @@ webcape:
   pass:  # set in settings.local.yml
   pin:
 
+app:
+  name: "Language Placement"
+  relative_url_root: "/"

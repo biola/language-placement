@@ -2,7 +2,7 @@
   h1 Unfinished Exams
   ul
     - @unfinished_exams.each do |exam_attempt|
-      li = link_to exam_attempt, [exam_attempt.exam, exam_attempt]
+      li = link_to time_ago_in_words(exam_attempt.started_at) + ' ago', [exam_attempt.exam, exam_attempt]
 
 -if @finished_exams.any?
   h1 Finished Exams
