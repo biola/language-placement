@@ -20,7 +20,7 @@ h2.special-font
           th Score:
           td = @exam_attempt.score
 
-= link_to(@exam, class: 'btn btn-default') do
+= link_to(@exam, class: 'btn btn-primary') do
   i class="fa fa-arrow-left"
   | &nbsp; &nbsp;
   strong= "Back to #{@exam.type_name} Exams Listing"

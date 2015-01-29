@@ -33,7 +33,7 @@ br
               td = exam_attempt.uid
               td = l exam_attempt.started_at, format: :exam_time
               td = l exam_attempt.completed_at, format: :exam_time
-              td.text-right
+              td.text-right.special-font
                 strong = exam_attempt.score
 
 -if @unfinished_exams.any?
