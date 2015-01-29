@@ -13,6 +13,6 @@ class AttemptPolicy < ApplicationPolicy
     user.admin? || user.has_role?(:student)
   end
 
-  alias :create?, :show?
-  alias :complete?, :show?
+  alias :create? :show?
+  alias :complete? :show?
 end

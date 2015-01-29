@@ -1,6 +1,34 @@
-h1 Finished Exams
+h2
+  strong Exam Completed
+.panel.panel-default
+  .panel-body
+    table.table.table-striped
+      tbody
+        tr
+          th Language:
+          td = @exam.type_name
+        tr
+          th Exam ID:
+          td = @exam_attempt.uid
+        tr
+          th Date Started:
+          td = l @exam_attempt.started_at, format: :exam_time
+        tr
+          th Date Finished:
+          td = l @exam_attempt.completed_at, format: :exam_time
+        tr
+          th Score:
+          td = @exam_attempt.score
 
-ul
-  li= @exam_attempt.score
-  li= @exam_attempt.completed_at
-  li= @exam_attempt.started_at
+= link_to(@exam, class: 'btn btn-default') do
+  i class="fa fa-arrow-left"
+  | &nbsp; &nbsp;
+  strong= "Back to #{@exam.type_name} Exams Listing"
+end
+
+
+
+
+
+
+

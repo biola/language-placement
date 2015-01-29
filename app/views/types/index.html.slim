@@ -1,12 +1,21 @@
-h1 Start a new exam.
-ul
-  - @exams.each do |exam|
-    li
-      - if exam.persisted?
-        = link_to exam.type.name, exam
-      - else
-        = form_for exam do |f|
-          = f.hidden_field :type_id
-          = f.submit exam.type.name
-
+.types-container
+  .panel.panel-default
+    .panel-body
+      h2.droid-font
+        strong Language Placement Tests
+      br
+      ul.test-buttons
+        - @exams.each do |exam|
+          li
+            - if exam.persisted?
+              = link_to exam.type.name, exam, class: 'btn btn-primary btn-lg btn-block droid-font'
+            - else
+              = form_for exam do |f|
+                = f.hidden_field :type_id
+                = f.submit exam.type.name
+      br
+  - if current_user.admin?
+    = link_to(admin_exams_path, class: 'pull-right btn btn-danger btn-sm', id: 'admin-button') do
+      i class="fa fa-cog fa-2x"
+    end
 

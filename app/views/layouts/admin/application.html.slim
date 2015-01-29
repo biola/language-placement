@@ -1,12 +1,12 @@
 doctype html
-html
+html lang="en-us"
   head
-    title Language Placement
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
-    = csrf_meta_tags
-  body
-    - flash.each do |type, message|
-      div class=type = message
+    / frontend_toolkit/head includes default html head tags and csrf_meta_tags
+    = render 'frontend_toolkit/head', title: 'Language Placement'
+    = stylesheet_link_tag "application", media: "all"
+    = stylesheet_link_tag "wide-header", media: "all"
+    = javascript_include_tag "application"
+  body class="#{controller_name} #{action_name}"
+    = render 'frontend_toolkit/header'
     = yield
 

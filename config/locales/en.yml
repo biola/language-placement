@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  time:
+    formats:
+      exam_time: "%B %d, %Y at %I:%M %p"

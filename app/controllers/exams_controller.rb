@@ -16,8 +16,8 @@ class ExamsController < ApplicationController
 
   def show
     @exam = Exam.find(params[:id])
-    @unfinished_exams = @exam.attempts.unfinished
-    @finished_exams = @exam.attempts.finished
+    @unfinished_exams = @exam.attempts.unfinished.started_at_desc
+    @finished_exams = @exam.attempts.finished.completed_at_desc
   end
 
   private

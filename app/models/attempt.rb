@@ -51,5 +51,13 @@ class Attempt
 
   scope :unfinished, -> { where :completed_at => nil }
   scope :finished, -> { where :completed_at.ne => nil }
+  scope :started_at_desc, -> { order_by(:started_at => :desc) }
+  scope :completed_at_desc, -> { order_by(:completed_at => :desc) }
 
+  delegate :type_code, to: :exam, prefix: true
+  delegate :type_name, to: :exam, prefix: true
+  delegate :user_username, to: :exam, prefix: true
+  delegate :user_name, to: :exam, prefix: true
+  delegate :user_biola_id, to: :exam, prefix: true
+  delegate :user_email, to: :exam, prefix: true
 end

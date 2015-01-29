@@ -11,8 +11,8 @@ class AttemptsController < ApplicationController
   end
 
   def show
-    exam = Exam.find(params[:exam_id])
-    @exam_attempt = exam.attempts.find(params[:id])
+    @exam = Exam.find(params[:exam_id])
+    @exam_attempt = @exam.attempts.find(params[:id])
 
     if @exam_attempt.unfinished?
       redirect_to webcape_url(@exam_attempt)

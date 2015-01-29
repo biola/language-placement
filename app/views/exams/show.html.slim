@@ -1,15 +1,66 @@
--if @unfinished_exams.any?
-  h1 Unfinished Exams
-  ul
-    - @unfinished_exams.each do |exam_attempt|
-      li = link_to time_ago_in_words(exam_attempt.started_at) + ' ago', [exam_attempt.exam, exam_attempt]
-
--if @finished_exams.any?
-  h1 Finished Exams
-  ul
-    - @finished_exams.each do |exam_attempt|
-      li = link_to exam_attempt, [exam_attempt.exam, exam_attempt]
+h2
+  strong= @exam.type_name + " Placement Exam"
 
 = form_for [@exam, @exam.attempts.new] do |f|
-  = f.submit "Attempt a new exam"
+  = f.button(class: 'btn btn-primary btn-lg') do
+    i class="fa fa-plus"
+    | &nbsp; &nbsp;
+    strong Start a New Exam
+  end
+
+br
+
+-if @finished_exams.any?
+  .panel.panel-default
+    .panel-heading
+      .panel-title
+        i class="fa fa-star"
+        | &nbsp; &nbsp;
+        strong Finished Exams
+    .panel-body
+      table.table.table-striped
+        thead
+          tr
+            th Language
+            th Exam ID
+            th Date Started
+            th Date Finished
+            th.text-right Score
+        tbody
+          - @finished_exams.each do |exam_attempt|
+            tr
+              td = @exam.type_name
+              td = exam_attempt.uid
+              td = l exam_attempt.started_at, format: :exam_time
+              td = l exam_attempt.completed_at, format: :exam_time
+              td.text-right
+                strong = exam_attempt.score
+
+-if @unfinished_exams.any?
+  .panel.panel-default
+    .panel-heading
+      .panel-title
+        i class="fa fa-star-half-o"
+        | &nbsp; &nbsp;
+        strong Unfinished Exams
+    .panel-body
+      table.table.table-striped
+        thead
+          tr
+            th Language
+            th Exam ID
+            th Date Started
+        tbody
+          - @unfinished_exams.each do |exam_attempt|
+            tr
+              td = @exam.type_name
+              td = link_to exam_attempt.uid, [exam_attempt.exam, exam_attempt]
+              td = l exam_attempt.started_at, format: :exam_time
+
+= link_to(types_path, class: 'btn btn-default') do
+  i class="fa fa-arrow-left"
+  | &nbsp; &nbsp;
+  strong Back to Language Selection
+end
+
 

@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :show]
-    root to: 'users#index'
+    resources :exams, only: [:index]
+    root to: 'exams#index'
   end
   resources :types, only: [:index]
   resources :exams, only: [:create, :show] do

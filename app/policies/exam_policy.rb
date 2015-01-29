@@ -9,9 +9,13 @@ class ExamPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    user.admin?
+  end
+
   def show?
     user.admin? || user.has_role?(:student)
   end
 
-  alias :create?, :show?
+  alias :create? :show?
 end

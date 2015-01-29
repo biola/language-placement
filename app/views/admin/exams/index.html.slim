@@ -1,0 +1,30 @@
+.exam-admin-container
+  h3
+    strong Language Placement Tests Admin
+  .panel.panel-default
+    .panel-heading
+      .panel-title
+        strong Exam Attempts
+    .panel-body
+      table.table.table-striped.table-hover.table-condensed.datatable
+        thead
+          tr
+            th Biola ID
+            th Name
+            th Exam ID
+            th Language
+            th Date Started
+            th Date Completed
+            th.text-right Score
+            th Email
+        tbody
+          - @exam_attempts.sort.reverse.each do |attempt|
+            tr
+              td = attempt.exam_user_biola_id.rjust(8,"0")
+              td = attempt.exam_user_name
+              td = attempt.uid
+              td = attempt.exam_type_name
+              td = attempt.started_at ? l(attempt.started_at, format: :exam_time) : attempt.started_at
+              td = attempt.completed_at ? l(attempt.completed_at, format: :exam_time): attempt.completed_at
+              td.text-right = attempt.score
+              td = attempt.exam_user_email

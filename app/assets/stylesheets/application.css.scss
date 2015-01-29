@@ -10,8 +10,58 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  */
 
 @import "biola-frontend-toolkit";
+
+html {
+  background-color: #FFFFFF;
+}
+
+.types-container {
+  text-align: center;
+  padding: 40px 15px;
+}
+
+.test-buttons {
+  list-style-type: none;
+  padding: 0px;
+  margin: auto;
+  width: 400px;
+}
+
+.test-buttons li {
+  margin: 15px 0;
+}
+
+.test-buttons li a {
+  font-weight: bold;
+}
+
+.dataTables_filter label{
+  margin-right: 50px;
+}
+
+.exam-admin-container {
+  margin: 0 50px;
+}
+
+div.dataTables_filter input {
+  margin-left: 15px;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #d9edf7;
+}
+
+#admin-button {
+  position: relative;
+  top: -352px;
+}
+
+.droid-font {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+}
