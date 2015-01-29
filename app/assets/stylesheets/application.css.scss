@@ -25,15 +25,19 @@ html {
   padding: 40px 15px;
 }
 
-.test-buttons {
+.language-buttons {
   list-style-type: none;
   padding: 0px;
   margin: auto;
   width: 400px;
 }
 
-.test-buttons li {
+.language-buttons li {
   margin: 15px 0;
+}
+
+.language-buttons li a {
+  font-size: 1.75em;
 }
 
 .test-buttons li a {
@@ -58,10 +62,10 @@ div.dataTables_filter input {
 
 #admin-button {
   position: relative;
-  top: -352px;
+  top: -380px;
 }
 
-.droid-font {
-  font-family: 'Droid Sans', sans-serif;
-  font-weight: bold;
+.special-font {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
 }

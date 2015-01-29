@@ -1,14 +1,14 @@
 .types-container
   .panel.panel-default
     .panel-body
-      h2.droid-font
+      h2.special-font
         strong Language Placement Tests
       br
-      ul.test-buttons
+      ul.language-buttons
         - @exams.each do |exam|
           li
             - if exam.persisted?
-              = link_to exam.type.name, exam, class: 'btn btn-primary btn-lg btn-block droid-font'
+              = link_to exam.type.name, exam, class: 'btn btn-primary btn-lg btn-block special-font'
             - else
               = form_for exam do |f|
                 = f.hidden_field :type_id
