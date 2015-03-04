@@ -32,6 +32,8 @@ gem 'rails_config'
 
 gem 'jquery-datatables-rails', '~> 3.1.1'
 
+gem 'blazing'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
