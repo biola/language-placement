@@ -1,0 +1,4 @@
+app:
+  host: apps.staging.biola.edu
+  relative_url_root: /language-placement
+  full_url: http://apps.staging.biola.edu/language-placement
