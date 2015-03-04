@@ -1,3 +1,13 @@
+app:
+  name: "Language Placement"
+  scheme: http
+  host:
+  relative_url_root: /
+  full_url:
+
+# Overwrite this in production
+secret_token: ''
+
 urn_namespaces:
 - "urn:biola:language-placement:"
 - "urn:biola:apps:all:"
@@ -9,7 +19,3 @@ webcape:
   acct:  # set in settings.local.yml
   pass:  # set in settings.local.yml
   pin:
-
-app:
-  name: "Language Placement"
-  relative_url_root: "/"
