@@ -1,0 +1,8 @@
+target :'ruby2.staging', '******@ruby2.staging.biola.edu:/srv/rack/language-placement', rails_env: 'staging'
+target :'ruby6a.prod', '******@ruby6a.prod.biola.edu:/srv/rack/language-placement', rails_env: 'production'
+target :'ruby6b.prod', '******@ruby6b.prod.biola.edu:/srv/rack/language-placement', rails_env: 'production'
+
+placement', rails_env: 'staging'
+env_scripts '/etc/profile'
+
+rake :post_deploy, 'RAILS_RELATIVE_URL_ROOT=/language-placement'
