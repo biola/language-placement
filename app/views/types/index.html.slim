@@ -12,7 +12,7 @@
             - else
               = form_for exam do |f|
                 = f.hidden_field :type_id
-                = f.submit exam.type.name
+                = f.submit exam.type.name, class: 'btn btn-primary btn-lg btn-block
       br
   - if current_user.admin?
     = link_to(admin_exams_path, class: 'pull-right btn btn-danger btn-sm', id: 'admin-button') do
