@@ -1,38 +1,24 @@
 source 'https://rubygems.org'
 
+gem 'rails', '4.1.7.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
 
-gem 'mongoid'
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
-gem 'slim'
-
-gem 'rack-cas'
-
-gem 'pundit'
-
+gem 'biola_deploy'
 gem 'biola_frontend_toolkit'
-
-gem 'rails_config'
-
-gem 'jquery-datatables-rails', '~> 3.1.1'
-
 gem 'blazing'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-datatables-rails', '~> 3.1.1'
+gem 'jquery-rails'
+gem 'mongoid'
+gem 'pundit'
+gem 'rack-cas'
+gem 'rails_config'
+gem 'sass-rails', '~> 4.0.3'
+gem 'slim'
+gem 'spring',        group: :development
+gem 'therubyracer',  platforms: :ruby
+gem 'turnout'
 
 group :development do
   gem 'better_errors'
